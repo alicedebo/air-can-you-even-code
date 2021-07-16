@@ -4,6 +4,8 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
+let timeEl = document.querySelector(".timer")
+let secondsLeft = 60;
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
@@ -82,6 +84,24 @@ getNewQuestion = () => {
 
     acceptingAnswers = true
 }
+
+function setTime() {
+    let timerInterval = setInterval(function(){
+        secondsLeft--;
+        timeEl.textContent = secondsLeft
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage()
+        }
+    }, 1000)
+}
+
+function sendMessage() {
+    timeEl.textContent = "Times up!!";
+    window.location.assign('./end.html')
+}
+setTime()
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
