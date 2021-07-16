@@ -12,7 +12,7 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: 'what is number one',
+        question: 'the answer is 2',
         choice1: 'one',
         choice2: 'two',
         choice3: 'three',
@@ -21,7 +21,7 @@ let questions = [
         answer: 2,
     },
     {
-        question: 'what is number two',
+        question: 'the answer is 3',
         choice1: 'one',
         choice2: 'two',
         choice3: 'three',
@@ -29,7 +29,7 @@ let questions = [
         answer: 3,
     },
     {
-        question: 'what is number three',
+        question: 'the answer is 4',
         choice1: 'one',
         choice2: 'two',
         choice3: 'three',
@@ -37,13 +37,15 @@ let questions = [
         answer: 4,
     },
     {
-        question: 'what is number four',
+        question: 'the answer is 1',
         choice1: 'one',
         choice2: 'two',
         choice3: 'three',
         choice4: 'four',
         answer: 1,
-    }
+    },
+
+    
 ]
 
 const SCORE_POINTS = 100;
@@ -60,7 +62,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('./end.html')
     }
 
     questionCounter++ 
@@ -71,7 +73,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
 
-    choices.forEach(choice =>{
+    choices.forEach(choice => {
         const number = choice.dataset['number']
         choice.innerText = currentQuestion['choice' + number]
     })
@@ -91,7 +93,7 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        if (classToApply == 'correct') {
+        if (classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
         }
 
@@ -100,13 +102,15 @@ choices.forEach(choice => {
         setTimeout(() =>{
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
+
         }, 1000)
     })
 })
 
 incrementScore = num => {
-    score =+num
+    score += num
     scoreText.innerText = score
 }
 
 startGame()
+// updateCountdown()

@@ -1,29 +1,31 @@
 :root {
-    background-color: #990033;
+    background-color: rgb(29, 26, 26);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* font-size: 3rem; */
+    font-size: 62.5%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-    font-size: 200%;
-    margin-bottom: 50px;
+    font-size: 5.4rem;
+    margin-bottom: 5rem;
     color: white;
     /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);    */
 }
 
 h2 {
-    /* font-size: 175%;
-    margin: 20px; */
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
     color: white;
 }
 
 p {
     color: white;
+    font-size: 2rem;
 }
 
 .container {
@@ -34,6 +36,7 @@ p {
     height: 100vh;
     max-width: 80rem;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .flex-column {
@@ -58,26 +61,26 @@ p {
     display: none;
 }
 
-.start-btn {
+.btn {
     font-size: 2.4rem;
     padding: 2rem 0;
     width: 30rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: black;
-    background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
+    color: rgb(28, 26, 26);
+    background: linear-gradient(90deg, rgb(18, 93, 255) 0%, rgb(0, 102, 255) 100%);
     border-radius: 4px;
 }
 
-.start-btn:hover {
+.btn:hover {
     cursor: crosshair;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
     transition: transform 150ms;
     transform: scale(1.03);
 }
 
-.start-btn[disabled]:hover{
+.btn[disabled]:hover{
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
@@ -88,7 +91,7 @@ p {
 }
 
 #highscore-btn:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0, 0, 0.5);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(255,255,0,0,0.5);
 }
 
 /* End page css */
@@ -100,3 +103,34 @@ p {
     align-items: center;
     max-width: 30rem;
 }
+
+input {
+    margin-bottom: 1rem;
+    width: 2rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 (86, 185, 235, 0.5);
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font-size: 2.4rem;
+    color: #fff;
+    text-align: center;
+}
+
+#saveScoreBtn {
+    border: none;
+
+}
+
