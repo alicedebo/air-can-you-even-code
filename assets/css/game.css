@@ -2,6 +2,11 @@ body {
     color: green;
 }
 
+#question {
+    font-size: 35px;
+    color: aquamarine;
+}
+
 .choice-container {
     display: flex;
     margin-bottom: 0.8rem;
