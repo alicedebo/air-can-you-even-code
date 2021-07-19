@@ -1,5 +1,10 @@
+:root {
+    background-color: rgb(29, 26, 26);
+}
+
 body {
-    color: white
+    color: white;
+    text-shadow: black 1px 1px;
 }
 
 #highScoresList {

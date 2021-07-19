@@ -4,13 +4,13 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
-let timeEl = document.querySelector(".timer")
+let timeEl = document.querySelector(".timer");
 let secondsLeft = 60;
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
-let availableQuestions = []
+let availableQuestions = [];
 
 let questions = [
     {
