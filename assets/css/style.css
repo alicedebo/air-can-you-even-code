@@ -1,5 +1,5 @@
 :root {
-    background-color: rgb(29, 26, 26);
+    background-color: rgb(129, 134, 246);
 }
 * {
     box-sizing: border-box;
@@ -10,21 +10,22 @@
 }
 
 h1 {
-    font-size: 5.4rem;
-    margin-bottom: 5rem;
-    color: white;
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: yellow;
 }
 
 h2 {
-    font-size: 4.2rem;
+    font-size: 40px;
     margin-bottom: 4rem;
-    color: white;
+    color: yellow;
       
 }
 
 p {
-    color: white;
+    color: black;
     font-size: 2rem;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -61,22 +62,20 @@ p {
 }
 
 .btn {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
+    font-size: 35px;
+    padding: 20px;
+    width: 300px;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     text-decoration: none;
-    color: white;
-    text-shadow: black 1px 1px;
-    /* background: linear-gradient(90deg, rgb(18, 93, 255) 0%, rgb(0, 102, 255) 100%); */
-    border-radius: 4px;
+    color: black;
+    border-radius: 10px;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
 }
 
 .btn:hover {
     cursor: crosshair;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+    box-shadow: 0 0.4rem 1.4rem 0 yellow;
     transition: transform 150ms;
     transform: scale(1.03);
 }
@@ -91,18 +90,12 @@ p {
     background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); 
 }
 
-#highscore-btn:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(255,255,0,0,0.5);
-}
-
-/* End page css */
-
 .end-form-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 30rem;
+    max-width: 300px;
 }
 
 input {
@@ -115,23 +108,22 @@ input {
 }
 
 input::placeholder {
-    color: #aaa;
+    color: grey;
 }
 
 #username {
-    margin-bottom: 3rem;
+    margin-bottom: 40px;
     width: 100%;
     outline: none;
 }
 
 #end-text {
-    font-size: 2.4rem;
-    color: #fff;
+    font-size: 30px;
+    color: black;
     text-align: center;
 }
 
 #saveScoreBtn {
     border: none;
-
 }
 

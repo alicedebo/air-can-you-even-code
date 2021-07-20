@@ -1,8 +1,7 @@
 const question = document.querySelector('#question');
-const choices = Array.from(document.querySelectorAll('.choice-text'));
+const choices = Array.from(document.querySelectorAll('.answer'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
-const progressBarFull = document.querySelector('#progressBarFull');
 
 let timeEl = document.querySelector(".timer");
 let secondsLeft = 60;
@@ -46,8 +45,6 @@ let questions = [
         choice4: 'pTags.setAttribute(style = "font-size: 40px;")',
         answer: 1,
     },
-
-    
 ]
 
 const SCORE_POINTS = 100;
@@ -55,40 +52,39 @@ const MAX_QUESTIONS = 4;
 
 startGame = () => {
     questionCounter = 0;
-    score = 0
-    availableQuestions = [...questions]
+    score = 0;
+    availableQuestions = [...questions];
     getNewQuestion()
 }
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
+        localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('./end.html')
+        return window.location.assign('./end.html');
     }
 
-    questionCounter++ 
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    questionCounter++;
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
 
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
 
     choices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
     })
 
-    availableQuestions.splice(questionsIndex, 1)
+    availableQuestions.splice(questionsIndex, 1);
 
-    acceptingAnswers = true
+    acceptingAnswers = true;
 }
 
 function setTime() {
     let timerInterval = setInterval(function(){
         secondsLeft--;
-        timeEl.textContent = secondsLeft
+        timeEl.textContent = secondsLeft;
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
@@ -99,33 +95,33 @@ function setTime() {
 
 function sendMessage() {
     timeEl.textContent = "Times up!!";
-    window.location.assign('./end.html')
+    window.location.assign('./end.html');
 }
 setTime()
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        if (!acceptingAnswers) return
+        if (!acceptingAnswers) return;
 
-        acceptingAnswers = false
-        const selectedChoice = e.target
-        const selectedAnswer = selectedChoice.dataset['number']
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (classToApply === 'correct') {
-            incrementScore(SCORE_POINTS)
+            incrementScore(SCORE_POINTS);
         }
 
         if (classToApply === 'incorrect') {
             secondsLeft -= 2 * 5 * 1;
         }
+        // -=10
 
-
-        selectedChoice.parentElement.classList.add(classToApply)
+        selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() =>{
-            selectedChoice.parentElement.classList.remove(classToApply)
+            selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion()
 
         }, 1000)
@@ -133,9 +129,8 @@ choices.forEach(choice => {
 })
 
 incrementScore = num => {
-    score += num
-    scoreText.innerText = score
+    score += num;
+    scoreText.innerText = score;
 }
 
 startGame()
-// updateCountdown()

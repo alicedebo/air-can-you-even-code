@@ -1,37 +1,33 @@
-body {
-    color: green;
-}
-
 #question {
     font-size: 35px;
-    color: aquamarine;
+    color: black;
 }
 
-.choice-container {
+.whole {
     display: flex;
-    margin-bottom: 0.8rem;
+    margin-bottom: 10px;
     width: 100%;
-    border-radius: 4px;
-    background: rgb(18, 93, 255);
+    background: black;
     font-size: 3rem;
     min-width: 80rem;
 }
 
-.choice-container:hover {
+.whole:hover {
     cursor: crosshair;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(6, 103, 247, 0 5);
     transform: scale(1.02);
     transform: transform 100ms;
 }
 
-.choice-prefix {
+.choice {
     padding: 2rem 2.5rem;
-    color: white;
+    color: yellow;
 }
 
-.choice-text {
+.answer {
     padding: 2rem;
     width: 100%;
+    color: white;
 }
 
 .correct {
@@ -42,36 +38,21 @@ body {
     background: linear-gradient(32deg, rgba(230, 29, 1) 0%, rgb(224, 11, 11, 1) 100%);
 }
 
-/* heads up display */
-#hud {
+#first {
     display: flex;
     justify-content: space-between;
 }
 
-.hud-prefix {
+.second {
     text-align: center;
     font-size: 2rem;
     
 }
 
-.hud-main-text {
+.fourth {
     text-align: center;
 }
 
-#progressBar {
-    width: 20rem;
-    height: 3rem;
-    border: 0.2rem solid rgb(11, 223, 36);
-    margin-top: 2rem;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-#prograssBarfull {
-    height: 100%;
-    background-color: rgb(11, 223, 36);
-    width: 0%;
-}
 
 @media screen and (max-width: 768px) {
     .choice-container {
