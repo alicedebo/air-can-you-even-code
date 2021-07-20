@@ -6,4 +6,4 @@ If you're a beginner, like me, here's a great way to test your knowledge thus fa
 Here's a peak at the quiz itself! </br>
 ![screenshot of quiz](questions.png)<br>
 #### Excited yet?! You better be if you want to click the link below!
-[Get ready to have your mind blown!](https://alicedebo.github.io/air-can-you-even-code)
+[Get ready to have your mind blown!](https://alicedebo.github.io/air-can-you-even-code/)
